@@ -1,0 +1,7 @@
+{
+  "name": "Balmer Lawrie Visitor Management WEB",
+  "description": "A tool for security personnel to manage visitor entries and exits, including capturing photos, contact details, and the purpose of the visit.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

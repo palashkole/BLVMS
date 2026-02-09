@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balmer Lawrie & Co. Ltd | Visitor Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* Custom styles for print media */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body * {
+                visibility: hidden;
+            }
+            #id-card-to-print, #id-card-to-print * {
+                visibility: visible;
+            }
+            #id-card-to-print {
+                position: absolute; left: 50%; top: 2cm;
+                transform: translateX(-50%);
+                width: 10cm; height: auto;
+                box-shadow: none !important;
+                border: 1px dashed #999 !important;
+                padding: 0.5cm !important;
+                page-break-inside: avoid;
+                box-sizing: border-box !important;
+            }
+            #id-card-to-print p, 
+            #id-card-to-print div, 
+            #id-card-to-print span, 
+            #id-card-to-print strong {
+                font-size: 11pt !important;
+                color: #000 !important;
+            }
+            #id-card-to-print h3 {
+                font-size: 20pt !important;
+                margin-top: 0.3cm !important;
+                margin-bottom: 0.2cm !important;
+            }
+            #id-card-to-print .visitor-photo {
+                width: 3.5cm !important;
+                height: 3.5cm !important;
+                border: 3px solid #eee !important;
+                margin-bottom: 0.3cm !important;
+            }
+            #id-card-to-print .visitor-badge {
+                font-size: 12pt !important;
+                background-color: #4f46e5 !important;
+                color: #fff !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            #id-card-to-print .visitor-id-label { font-size: 9pt !important; }
+            #id-card-to-print .visitor-id-value { font-size: 14pt !important; }
+            #id-card-to-print .details-and-qr-container {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                width: 100% !important;
+                margin-top: 0.5cm !important;
+                padding-top: 0.5cm !important;
+                border-top: 1px solid #ccc !important;
+            }
+            #id-card-to-print .details-section { line-height: 1.6 !important; }
+            #id-card-to-print .info-row strong { width: 3cm !important; flex-shrink: 0 !important; }
+            #id-card-to-print .qr-code-image { width: 2.8cm !important; height: 2.8cm !important; }
+            #id-card-to-print .expires-value { color: #000 !important; font-weight: bold; }
+            .modal-action-buttons, .modal-overlay { display: none !important; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-easy-crop": "https://esm.sh/react-easy-crop@^5.5.6"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-100">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
